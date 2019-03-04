@@ -1,3 +1,13 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.5'
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:2.0.5.RELEASE"
+    }
+}
+
 plugins {
     // Provide convenience executables for trying out the examples.
     id 'application'
@@ -7,7 +17,10 @@ plugins {
     //id 'idea'
     id 'eclipse'
     id 'java'
+    id 'org.springframework.boot' version '2.0.5.RELEASE'
 }
+
+apply plugin: 'io.spring.dependency-management'
 
 repositories {
     mavenCentral()
@@ -39,6 +52,10 @@ dependencies {
     implementation "com.google.protobuf:protobuf-java-util:${protobufVersion}"
 
     runtimeOnly "io.grpc:grpc-netty-shaded:${grpcVersion}"
+    
+    implementation 'org.springframework.boot:spring-boot-starter'
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
 
     testImplementation "io.grpc:grpc-testing:${grpcVersion}"
     testImplementation "junit:junit:4.12"
@@ -62,5 +79,11 @@ sourceSets {
             srcDirs 'build/generated/source/proto/main/grpc'
             srcDirs 'build/generated/source/proto/main/java'
         }
+        
+         proto {
+            srcDir 'src/main/proto'
+        }
     }
 }
+
+mainClassName  = 'dwx.tech.res.grpc.server.Application'

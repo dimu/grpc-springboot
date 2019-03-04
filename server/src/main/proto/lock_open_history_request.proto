@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_outer_classname = "password";
+option java_package = "dwx.res.proto";
+
+package dwx.res.proto;
+
+service Password {
+	rpc AddLockPassword(AddUnlockPasswordRequest) returns(AddUnlockPasswordResponse){}
+}
+
+message AddUnlockPasswordRequest {
+	string owner_num = 1;
+	string open_password = 2;
+	uint32 password_len = 3;
+}
+
+message AddUnlockPasswordResponse {
+	string ret_code = 1;
+	string ret_message = 2;
+}
