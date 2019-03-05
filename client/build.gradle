@@ -16,7 +16,7 @@ plugins {
     // Generate IntelliJ IDEA's .idea & .iml project files
     //id 'idea'
     id 'eclipse'
-    id 'java'
+    //id 'java'
     id 'org.springframework.boot' version '2.0.5.RELEASE'
 }
 
@@ -76,12 +76,12 @@ protobuf {
 sourceSets {
     main {
         java {
-            srcDirs 'build/generated/source/proto/main/grpc'
-            srcDirs 'build/generated/source/proto/main/java'
+            srcDirs 'build/generated/source/proto/main/grpc/'
+            srcDirs 'build/generated/source/proto/main/java/'
         }
         
          proto {
-            srcDir 'src/main/proto'
+            srcDir 'src/main/proto/'
         }
     }
 }
