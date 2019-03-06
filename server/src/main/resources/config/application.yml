@@ -1,0 +1,19 @@
+#server:
+#  port: -1
+
+#spring:
+#  main:
+#    web-application-type: none
+
+grpc:
+  server:
+    lock:
+      port: 21
+    ss:
+      port: 23
+   
+#config mongodb 
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/yapi      

@@ -56,6 +56,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    
+    //add mongodb dependency
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 
     testImplementation "io.grpc:grpc-testing:${grpcVersion}"
     testImplementation "junit:junit:4.12"
