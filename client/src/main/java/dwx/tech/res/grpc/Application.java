@@ -22,7 +22,7 @@ public class Application implements CommandLineRunner{
 
     @Override
     public void run(String... args) throws Exception {
-        new PasswordClient("localhost", 50051).greet("123456");
+        new PasswordClient("localhost", 21).greet("123456");
     }
 
 }

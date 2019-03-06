@@ -1,9 +1,9 @@
 #server:
 #  port: -1
 
-#spring:
-#  main:
-#    web-application-type: none
+spring:
+  main:
+    web-application-type: none
 
 grpc:
   server:
@@ -16,4 +16,5 @@ grpc:
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017/yapi      
+      uri: mongodb://localhost:27017/yapi 
+      database: yapi     
